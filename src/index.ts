@@ -1,4 +1,7 @@
-const Matematica = require("./Matematica");
+//const Matematica = require("./Matematica");
+//import * as Matematica from "./Matematica";
+//import {somar, subtrair} from './Matematica'
+import Matematica from "./Matematica";
 
 let n1: number = 10;
 let n2: number = 2;
