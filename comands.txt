@@ -1,0 +1,2 @@
+npm init -> inicia um projeto
+node (comando ou arquivo js/ts) -> roda um programa node
