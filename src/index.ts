@@ -1,6 +1,6 @@
 import validator from 'validator';
 
-let ip = '1.1.1.1000'
+let ip = '1.1.1.100'
 
 console.log(validator.isIP(ip));
 
