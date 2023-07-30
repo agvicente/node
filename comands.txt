@@ -3,10 +3,16 @@ npm init -> inicia um projeto
 npm install (sem comandos) -> atualiza as dependências
 npm install (biblioteca) -> baixa/atualiza biblioteca
 npm install -g typescript -> instalar typescript globalmente
-npm install -g nodemon -> instalar biblioteca nodemon globalmente (monitoramento e atualização dos transpilados)
+npm install -g nodemon -> instalar biblioteca nodemon globalmente (monitoramento e atualização dos transpilados e atualizacao do projeto)
+npm install -g ts-node -> instalar biblioteca ts-node globalmente (o comando ts-node não necessita dos dois terminais (desnecessário o modo watchomode do tsc -w))
 npm install --save-dev @types/node -> instalar biblioteca de inteligência do typescript para facilitar o desenvolvimento (--save-dev é para instalar apenas para desenvolvimento e não em produção)
+npm install express -> instala gerenciador do servidor express
+npm install @types/express -> instala inteligência de digitação do servidor express
 node (comando ou arquivo js/ts) -> roda um programa node
+
+nodemon (projeto) -> roda o projeto já com watchmode, caso o ts-node já esteja instalado
 
 --TYPESCRIPT--
 tsc --init -> cria arquivo de configuração do typescript
 tsc -w -> inicia o watchmode do typescript, detectando alterações e alterando o js correspondente
+ts-node -> atualiza o dist automaticamente e roda o projeto typescript
