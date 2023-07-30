@@ -1,2 +1,10 @@
+--NODE--
 npm init -> inicia um projeto
+npm install (sem comandos) -> atualiza as dependências
+npm install -g typescript -> instalar typescript globalmente
+npm install --save-dev @types/node -> instalar biblioteca de inteligência do typescript para facilitar o desenvolvimento (--save-dev é para instalar apenas para desenvolvimento e não em produção)
 node (comando ou arquivo js/ts) -> roda um programa node
+
+--TYPESCRIPT--
+tsc --init -> cria arquivo de configuração do typescript
+tsc -w -> inicia o watchmode do typescript, detectando alterações e alterando o js correspondente
