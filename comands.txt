@@ -16,3 +16,5 @@ nodemon (projeto) -> roda o projeto já com watchmode, caso o ts-node já esteja
 tsc --init -> cria arquivo de configuração do typescript
 tsc -w -> inicia o watchmode do typescript, detectando alterações e alterando o js correspondente
 ts-node -> atualiza o dist automaticamente e roda o projeto typescript
+
+--ROTAS
