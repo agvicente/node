@@ -11,8 +11,11 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/app', express.static(path.join(__dirname, 'public')));
 
-const apiRouter = require('./api/routes/apiRouter') 
-app.use ('/api', apiRouter)
+const apiV1Router = require('./api/routes/apiV1Router') 
+app.use ('/api', apiV1Router)
+
+const apiV2Router = require('./api/routes/apiV2Router') 
+app.use ('/api', apiV2Router)
 
 
 let port = process.env.PORT || 3000;

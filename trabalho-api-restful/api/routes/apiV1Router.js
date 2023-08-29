@@ -1,5 +1,5 @@
 const express = require('express');
-let apiRouter = express.Router()
+let apiV1Router = express.Router()
 
 const endpoint = '/'
 
@@ -13,23 +13,22 @@ const lista_produtos = {
         ]
 } 
 
-apiRouter.get (endpoint + 'produtos', function (req, res) {
+apiV1Router.get (endpoint + 'produtos', function (req, res) {
  res.status(200).json (lista_produtos)
 });
 
-apiRouter.get (endpoint + 'produtos/:id', function (req, res) {
+apiV1Router.get (endpoint + 'produtos/:id', function (req, res) {
     let id = req.params.id;
     produtos = lista_produtos.produtos;
-    for(let i = 0; i < produtos.length; i++){
-        if(produtos[i].id == id){
-            res.status(200).json(produtos[i]);
-            return;
-        }       
+    const idx = produtos.findIndex((item) => item.id == id);
+    if(idx > -1){
+        res.status(200).json(produtos[idx]);
+        return;
     }
     res.status(404).json({mensagem: "Produto não encontrado"});
 });
 
-apiRouter.post (endpoint + 'produtos', function (req, res) {
+apiV1Router.post (endpoint + 'produtos', function (req, res) {
     let produto = req.body;
     let id = lista_produtos.produtos.length + 1;
     produto.id = id;
@@ -43,7 +42,7 @@ apiRouter.post (endpoint + 'produtos', function (req, res) {
     res.status(201).json(produto);
 });
 
-apiRouter.put (endpoint + 'produtos/:id', function (req, res) {
+apiV1Router.put (endpoint + 'produtos/:id', function (req, res) {
     let id = req.params.id;
     let produto = req.body;
     for(let i = 0; i < lista_produtos.produtos.length; i++){
@@ -55,7 +54,7 @@ apiRouter.put (endpoint + 'produtos/:id', function (req, res) {
     res.status(404).json({mensagem: "Produto não encontrado"});
 });
 
-apiRouter.delete (endpoint + 'produtos/:id', function (req, res) {
+apiV1Router.delete (endpoint + 'produtos/:id', function (req, res) {
     let id = req.params.id;
     for(let i = 0; i < lista_produtos.produtos.length; i++){
         if(lista_produtos.produtos[i].id == id){
@@ -73,4 +72,4 @@ apiRouter.delete (endpoint + 'produtos/:id', function (req, res) {
     res.status(404).json({mensagem: "Produto não encontrado"});
 });
 
-module.exports = apiRouter;
+module.exports = apiV1Router;
