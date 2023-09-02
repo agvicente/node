@@ -35,11 +35,12 @@ apiV1Router.post (endpoint + 'produtos', function (req, res) {
     for(let i = 0; i < lista_produtos.produtos.length; i++){
         if(lista_produtos.produtos[i].descricao == produto.descricao){
             res.status(409).json({mensagem: "Produto já cadastrado"});
-            return;
+            res.redirect('/app');
         }
     }
     lista_produtos.produtos.push(produto);
-    res.status(201).json(produto);
+    // console.log('entrei');
+    res.redirect('/app');
 });
 
 apiV1Router.put (endpoint + 'produtos/:id', function (req, res) {
@@ -49,6 +50,7 @@ apiV1Router.put (endpoint + 'produtos/:id', function (req, res) {
         if(lista_produtos.produtos[i].id == id){
             lista_produtos.produtos[i] = produto;
             res.status(200).json(produto);
+            return;
         }
     }
     res.status(404).json({mensagem: "Produto não encontrado"});
@@ -67,6 +69,7 @@ apiV1Router.delete (endpoint + 'produtos/:id', function (req, res) {
             }
             lista_produtos.produtos = new_lista_produtos;
             res.status(200).json({mensagem: "Produto removido com sucesso"});
+            return;
         }
     }
     res.status(404).json({mensagem: "Produto não encontrado"});

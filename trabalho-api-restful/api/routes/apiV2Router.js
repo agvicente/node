@@ -1,5 +1,5 @@
 const express = require('express');
-let apiV1Router = express.Router()
+let apiV2Router = express.Router()
 
 const endpoint = '/'
 
@@ -8,11 +8,11 @@ const knex = require('knex')(
 )
 
 
-apiV1Router.get (endpoint + 'produtos', function (req, res) {
+apiV2Router.get (endpoint + 'produtos', function (req, res) {
  res.status(200).json (lista_produtos)
 });
 
-apiV1Router.get (endpoint + 'produtos/:id', function (req, res) {
+apiV2Router.get (endpoint + 'produtos/:id', function (req, res) {
     let id = req.params.id;
     produtos = lista_produtos.produtos;
     const idx = produtos.findIndex((item) => item.id == id);
@@ -23,7 +23,7 @@ apiV1Router.get (endpoint + 'produtos/:id', function (req, res) {
     res.status(404).json({mensagem: "Produto não encontrado"});
 });
 
-apiV1Router.post (endpoint + 'produtos', function (req, res) {
+apiV2Router.post (endpoint + 'produtos', function (req, res) {
     let produto = req.body;
     let id = lista_produtos.produtos.length + 1;
     produto.id = id;
@@ -37,7 +37,7 @@ apiV1Router.post (endpoint + 'produtos', function (req, res) {
     res.status(201).json(produto);
 });
 
-apiV1Router.put (endpoint + 'produtos/:id', function (req, res) {
+apiV2Router.put (endpoint + 'produtos/:id', function (req, res) {
     let id = req.params.id;
     let produto = req.body;
     for(let i = 0; i < lista_produtos.produtos.length; i++){
@@ -49,7 +49,7 @@ apiV1Router.put (endpoint + 'produtos/:id', function (req, res) {
     res.status(404).json({mensagem: "Produto não encontrado"});
 });
 
-apiV1Router.delete (endpoint + 'produtos/:id', function (req, res) {
+apiV2Router.delete (endpoint + 'produtos/:id', function (req, res) {
     let id = req.params.id;
     for(let i = 0; i < lista_produtos.produtos.length; i++){
         if(lista_produtos.produtos[i].id == id){
@@ -67,4 +67,4 @@ apiV1Router.delete (endpoint + 'produtos/:id', function (req, res) {
     res.status(404).json({mensagem: "Produto não encontrado"});
 });
 
-module.exports = apiV1Router;
+module.exports = apiV2Router;
