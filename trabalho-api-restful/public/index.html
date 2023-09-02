@@ -4,11 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Api Restful</title>
+    <title>Restful Api - Augusto Custodio Vicente</title>
 </head>
 <body>
-    <h1>Welcome</h1>
+    <h1>Bem vindo à minha API Restful</h1>
+
+    <br/>
+
+    <!-- <form method="POST" action="/api/v1/produtos">
+        <label for="produto">Descrição do Produto: </label>
+        <input type="text" name="descricao" id="descricao" placeholder="Descrição" required>
+        <br/>
+        <label for="preco">Preço: </label>
+        <input type="number" name="valor" id="valor" placeholder="Valor" required>
+        <br/>
+        <label for="marca">Marca: </label>
+        <input type="text" name="marca" id="marca" placeholder="Marca" required>
+        <br/>
+        <input type="submit" value="Enviar" id="cadastrar">
+    </form> -->
+
+    <br/>
+
+    <div id="produtos">
+        <table style="border: 1px solid;">
+            <thead style="border: 1px solid;">
+                <tr style="border: 1px solid;">
+                    <th style="border: 1px solid;">Id</th>
+                    <th style="border: 1px solid;">Descrição</th>
+                    <th style="border: 1px solid;">Valor</th>
+                    <th style="border: 1px solid;">Marca</th>
+                </tr>
+            </thead>
+            <tbody id="body-table">
+                
+            </tbody>
+        </table>
+    </div>
+
     
     <script src="js/script.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>

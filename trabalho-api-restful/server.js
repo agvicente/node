@@ -7,12 +7,15 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+// app.use(express.urlencoded({ extended: true }));
 
 app.use('/app', express.static(path.join(__dirname, 'public')));
 
-const apiRouter = require('./api/routes/apiRouter') 
-app.use ('/api', apiRouter)
+const apiV1Router = require('./api/routes/apiV1Router') 
+app.use ('/api/v1', apiV1Router)
+
+// const apiV2Router = require('./api/routes/apiV2Router') 
+// app.use ('/api/v2', apiV2Router)
 
 
 let port = process.env.PORT || 3000;
