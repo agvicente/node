@@ -1,55 +1,92 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Restful Api - Augusto Custodio Vicente</title>
+  <title>Products Api</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
+
 <body>
-    <h1>Bem vindo à API Restful de Augusto Custodio Vicente</h1>
-    <p>
-        Olá Professor, tudo bem? <br/>
-        Esta api contém os endpoints básicos para CRUD de produtos.<br/>
-        Não foi implementado uma interface para o usuário, mas é possível usar o POSTMAN para testar os endpoints.
-        Para o proximo eu faço a interface, mas como não tinha muito tempo, preferi focar na parte de backend. :)
-    </p>
-
-    <br/>
-
-    <!-- <form method="POST" action="/api/v1/produtos">
-        <label for="produto">Descrição do Produto: </label>
-        <input type="text" name="descricao" id="descricao" placeholder="Descrição" required>
-        <br/>
-        <label for="preco">Preço: </label>
-        <input type="number" name="valor" id="valor" placeholder="Valor" required>
-        <br/>
-        <label for="marca">Marca: </label>
-        <input type="text" name="marca" id="marca" placeholder="Marca" required>
-        <br/>
-        <input type="submit" value="Enviar" id="cadastrar">
-    </form> -->
-
-    <br/>
-
-    <div id="produtos">
-        <table style="border: 1px solid;">
-            <thead style="border: 1px solid;">
-                <tr style="border: 1px solid;">
-                    <th style="border: 1px solid;">Id</th>
-                    <th style="border: 1px solid;">Descrição</th>
-                    <th style="border: 1px solid;">Valor</th>
-                    <th style="border: 1px solid;">Marca</th>
-                </tr>
-            </thead>
-            <tbody id="body-table">
-                
-            </tbody>
-        </table>
+  <aside>
+    <div class="menu-opener">
+      <img src=./img/menu.jpg width="36" />
     </div>
-
-    
-    <script src="js/script.js"></script>
-    <script src="app.js"></script>
+    <div class="menu-area">
+      <ul>
+        <li>Home</li>
+        <li>Sobre</li>
+        <li>Contatos</li>
+      </ul>
+    </div>
+  </aside>
+  <h1>Products Api</h1>
+  <h2>Welcome to Products Api by Augusto Custodio Vicente</h2>
+  <form id="form-insert-product" method="POST">
+    <div class="insert-product">
+      <h3>Insert Product</h3>
+      <div class="input-group">
+        <label for="description">Description</label>
+        <input type="text" name="description" id="description" required />
+      </div>
+      <div class="input-group">
+        <label for="brand">Brand</label>
+        <input type="text" name="brand" id="brand" required />
+      </div>
+      <div class="input-group">
+        <label for="price">Price</label>
+        <input type="text" name="price" id="price" required />
+      </div>
+      <div class="input-group">
+        <button type="button" id="btn-insert">Insert</button>
+      </div>
+    </div>
+  </form>
+  <br />
+  <form id="form-update-product">
+    <div class="products-table">
+      <h3>Products</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>
+              <div>Id</div>
+              <!-- <div class="search-table">
+                <input type="text" class="search" />
+                <button id="btn-get-product-by-id">Search</button>
+              </div> -->
+            </th>
+            <th>
+              <div>Description</div>
+              <!-- <div class="search-table">
+                <input type="text" class="search" />
+                <button id="btn-get-product-by-description">Search</button>
+              </div> -->
+            </th>
+            <th>
+              <div>Brand</div>
+              <!-- <div class="search-table">
+                <input type="text" class="search" />
+                <button id="btn-get-product-by-brand">Search</button>
+              </div> -->
+            </th>
+            <th>
+              <div>Price</div>
+              <!-- <div class="search-table">
+                <input type="text" class="search" />
+                <button id="btn-get-product-by-price">Search</button>
+              </div> -->
+            </th>
+            <th>Options</th>
+          </tr>
+        </thead>
+        <tbody id="body-table">
+          <!--Content table-->
+        </tbody>
+      </table>
+    </div>
+  </form>
+  </form>
 </body>
+
+<script src="./js/scripts.js"></script>
+
 </html>
